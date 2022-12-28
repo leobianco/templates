@@ -1,0 +1,63 @@
+% Preamble
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikz-network}
+\usetikzlibrary{
+	mindmap, trees, arrows, arrows.meta, positioning, decorations.markings, 
+	fit, decorations.pathmorphing
+}
+\usepackage{caption}
+\usepackage{subcaption}  % For grids of images
+\usepackage[section]{placeins}  % Figures stay in section
+\usepackage[framemethod=tikz]{mdframed} % Colored boxes
+\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=red!40,backgroundcolor=red!10,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{questionbox}
+
+% Mathematics and code
+\usepackage{amsthm,amsmath}
+\usepackage{flexisym}  % recommended for breqn
+\usepackage{breqn}  % for breaking long equations, load it before amssymb
+\usepackage{amssymb, mathrsfs}
+\usepackage{mathtools}  % for declaring new paired delimiters
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\newtheorem{theorem}{Theorem}  % Use options to name theorems
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}  
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+
+% Fonts, symbols, languages
+\usepackage[utf8]{inputenc}
+\usepackage{ebgaramond}  % ebgaramond, palatino, fourier
+\usepackage{enumerate}  % Custom numbered items, such as steps 1, 2, etc.
+\usepackage{enumitem}  % Ordinals
+\usepackage{moreenum}
+\usepackage{marginnote}
+\usepackage{verbatim}
+\usepackage{marginnote}
+\usepackage{multicol}
+% \setlength{\parindent}{0pt}  % If you do not want paragraph indentation.
+%\usepackage[francais]{babel}
+
+% References and links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+    }
+\usepackage{url}
+
+% Subfile (last)
+\usepackage{subfiles}
+
+\endinput % To close this file
