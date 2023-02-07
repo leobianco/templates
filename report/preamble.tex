@@ -1,6 +1,7 @@
 % Preamble
 
 % Graphics
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikz-network}
@@ -12,8 +13,19 @@
 \usepackage{subcaption}  % For grids of images
 \usepackage[section]{placeins}  % Figures stay in section
 \usepackage[framemethod=tikz]{mdframed} % Colored boxes
+
+% Define custom colors
+\definecolor{lightgreen}{RGB}{250,255,250}
+\definecolor{emeraldgreen}{RGB}{80, 200, 120}
+
+% Define colored boxes
 \newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=red!40,backgroundcolor=red!10,innerleftmargin=6pt,
-innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{questionbox}
+innerrightmargin=6pt,innertopmargin=0pt,innerbottommargin=\topsep]{redbox}
+\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=emeraldgreen,backgroundcolor=lightgreen,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=0pt,innerbottommargin=\topsep]{greenbox}
+\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=yellow,backgroundcolor=yellow!25,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
+% The inner margins are set this way to be harmonious with the amsthm environments I created
 
 % Mathematics and code
 \usepackage{amsthm,amsmath}
@@ -23,6 +35,29 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{questionbox}
 \usepackage{mathtools}  % for declaring new paired delimiters
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{thmtools}  % for theorem, definition, and question lists
+
+% Custom amsthm theorem styles
+% I want questions to be named, for the question list, but I do not want this name to appear in the document.
+\newtheoremstyle{question}
+  {\topsep}   % ABOVESPACE
+  {\topsep}   % BELOWSPACE
+  {\normalfont}  % BODYFONT
+  {0pt}       % INDENT (empty value is the same as 0pt)
+  {\bfseries} % HEADFONT
+  {.}         % HEADPUNCT
+  {5pt plus 1pt minus 1pt} % HEADSPACE
+  {\thmname{#1}\thmnumber{ #2}}          % CUSTOM-HEAD-SPEC
+
+\newtheoremstyle{answer}  % Pass reference to question as note
+  {\topsep}   % ABOVESPACE
+  {\topsep}   % BELOWSPACE
+  {\normalfont}  % BODYFONT
+  {0pt}       % INDENT (empty value is the same as 0pt)
+  {\bfseries} % HEADFONT
+  {.}         % HEADPUNCT
+  {5pt plus 1pt minus 1pt} % HEADSPACE
+  {\thmname{#1}\thmnote{ to \hyperref[#3]{Question \ref*{#3}}}} % CUSTOM-HEAD-SPEC
 
 \newtheorem{theorem}{Theorem}  % Use options to name theorems
 \newtheorem{proposition}{Proposition}
@@ -33,6 +68,10 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{questionbox}
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{notation}{Notation}
+\theoremstyle{question}
+\newtheorem{question}{Question}
+\theoremstyle{answer}
+\newtheorem{answer}{Answer}
 
 % Fonts, symbols, languages
 \usepackage[utf8]{inputenc}
@@ -60,4 +99,4 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{questionbox}
 % Subfile (last)
 \usepackage{subfiles}
 
-\endinput % To close this file
+\endinput  % To close this file

@@ -1,0 +1,21 @@
+\documentclass[11pt]{report}
+
+% Preamble
+\input{preamble.tex}
+\input{commands.tex}
+\title{Title}
+\author{Leonardo Martins Bianco}
+\date{ }
+%\includeonly{chapters/}  % selective compilation
+
+\begin{document}
+\maketitle
+\tableofcontents
+% Content
+\include{chapters/}
+% Bibliography
+\clearpage
+\nocite{*}  % cites all entries in references.bib
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
