@@ -10,9 +10,9 @@
 	fit, decorations.pathmorphing
 }
 \usepackage{caption}
-\usepackage{subcaption}  % For grids of images
-\usepackage[section]{placeins}  % Figures stay in section
-\usepackage[framemethod=tikz]{mdframed} % Colored boxes
+\usepackage{subcaption}  % grids of images
+\usepackage[section]{placeins}  % figures stay in section
+\usepackage[framemethod=tikz]{mdframed} % colored boxes
 
 % Define custom colors
 \definecolor{lightgreen}{RGB}{250,255,250}
@@ -30,12 +30,12 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
 % Mathematics and code
 \usepackage{amsthm,amsmath}
 \usepackage{flexisym}  % recommended for breqn
-\usepackage{breqn}  % for breaking long equations, load it before amssymb
+\usepackage{breqn}  % breaking long equations, load it before amssymb
 \usepackage{amssymb, mathrsfs}
-\usepackage{mathtools}  % for declaring new paired delimiters
+\usepackage{mathtools}  % declaring new paired delimiters
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{thmtools}  % for theorem, definition, and question lists
+\usepackage{thmtools}  % theorem, definition, and question lists
 
 % Custom amsthm theorem styles
 % I want questions to be named, for the question list, but I do not want this name to appear in the document.
@@ -59,7 +59,7 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
   {5pt plus 1pt minus 1pt} % HEADSPACE
   {\thmname{#1}\thmnote{ to \hyperref[#3]{Question \ref*{#3}}}} % CUSTOM-HEAD-SPEC
 
-\newtheorem{theorem}{Theorem}  % Use options to name theorems
+\newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}  
 \theoremstyle{definition}
@@ -96,7 +96,4 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
     }
 \usepackage{url}
 
-% Subfile (last)
-\usepackage{subfiles}
-
-\endinput  % To close this file
+\endinput
