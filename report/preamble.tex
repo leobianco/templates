@@ -37,41 +37,17 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
 \usepackage{algpseudocode}
 \usepackage{thmtools}  % theorem, definition, and question lists
 
-% Custom amsthm theorem styles
-% I want questions to be named, for the question list, but I do not want this name to appear in the document.
-\newtheoremstyle{question}
-  {\topsep}   % ABOVESPACE
-  {\topsep}   % BELOWSPACE
-  {\normalfont}  % BODYFONT
-  {0pt}       % INDENT (empty value is the same as 0pt)
-  {\bfseries} % HEADFONT
-  {.}         % HEADPUNCT
-  {5pt plus 1pt minus 1pt} % HEADSPACE
-  {\thmname{#1}\thmnumber{ #2}}          % CUSTOM-HEAD-SPEC
-
-\newtheoremstyle{answer}  % Pass reference to question as note
-  {\topsep}   % ABOVESPACE
-  {\topsep}   % BELOWSPACE
-  {\normalfont}  % BODYFONT
-  {0pt}       % INDENT (empty value is the same as 0pt)
-  {\bfseries} % HEADFONT
-  {.}         % HEADPUNCT
-  {5pt plus 1pt minus 1pt} % HEADSPACE
-  {\thmname{#1}\thmnote{ to \hyperref[#3]{Question \ref*{#3}}}} % CUSTOM-HEAD-SPEC
-
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}  
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{corollary}{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{question}{Question}
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
-\newtheorem*{notation}{Notation}
-\theoremstyle{question}
-\newtheorem{question}{Question}
-\theoremstyle{answer}
-\newtheorem{answer}{Answer}
 
 % Fonts, symbols, languages
 \usepackage[utf8]{inputenc}
@@ -83,8 +59,6 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
 \usepackage{verbatim}
 \usepackage{marginnote}
 \usepackage{multicol}
-% \setlength{\parindent}{0pt}  % If you do not want paragraph indentation.
-%\usepackage[francais]{babel}
 
 % References and links
 \usepackage{hyperref}
