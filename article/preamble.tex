@@ -1,38 +1,19 @@
-% Preamble
-
 % Graphics
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{tikz-network}
 \usetikzlibrary{
-	mindmap, trees, arrows, arrows.meta, positioning, decorations.markings, 
-	fit, decorations.pathmorphing
+	arrows, arrows.meta, positioning, fit
 }
 \usepackage{caption}
 \usepackage{subcaption}  % grids of images
 \usepackage[section]{placeins}  % figures stay in section
-\usepackage[framemethod=tikz]{mdframed} % colored boxes
-
-% Define custom colors
-\definecolor{lightgreen}{RGB}{250,255,250}
-\definecolor{emeraldgreen}{RGB}{80, 200, 120}
-
-% Define colored boxes
-\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=red!40,backgroundcolor=red!10,innerleftmargin=6pt,
-innerrightmargin=6pt,innertopmargin=0pt,innerbottommargin=\topsep]{redbox}
-\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=emeraldgreen,backgroundcolor=lightgreen,innerleftmargin=6pt,
-innerrightmargin=6pt,innertopmargin=0pt,innerbottommargin=\topsep]{greenbox}
-\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=yellow,backgroundcolor=yellow!25,innerleftmargin=6pt,
-innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
-% The inner margins are set this way to be harmonious with the amsthm environments I created
 
 % Mathematics and code
-\usepackage{amsthm,amsmath}
-\usepackage{amssymb, mathrsfs}
-\usepackage{flexisym}  % recommended for breqn
+\usepackage{flexisym}  % recommended for breqn below
 \usepackage{breqn}  % breaking long equations, load it before amssymb
-\usepackage{mathtools}  % declaring new paired delimiters
+\usepackage{amsthm,amsmath, amssymb}
+\usepackage{mathrsfs}  % \mathscr command
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{thmtools}  % theorem, definition, and question lists
@@ -51,14 +32,10 @@ innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{yellowbox}
 
 % Fonts, symbols, languages
 \usepackage[utf8]{inputenc}
-\usepackage{ebgaramond}  % ebgaramond, palatino, fourier
 \usepackage{enumerate}  % Custom numbered items, such as steps 1, 2, etc.
 \usepackage{enumitem}  % Ordinals
 \usepackage{moreenum}
-\usepackage{marginnote}
 \usepackage{verbatim}
-\usepackage{marginnote}
-\usepackage{multicol}
 
 % References and links
 \usepackage{hyperref}
