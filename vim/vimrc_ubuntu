@@ -1,0 +1,91 @@
+" Plugins
+call plug#begin()
+" Enclosing
+Plug 'tpope/vim-surround'
+" File tree
+Plug 'preservim/nerdtree'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" LaTeX
+Plug 'lervag/vimtex'
+" Toggle autocompilation
+let g:vimtex_compiler_latexmk = {'continuous': 0}
+" Configure LaTeX folding
+let g:vimtex_fold_enabled = 1
+"let g:vimtex_fold_manual = 1
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_open_on_warning = 0
+
+" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Auto matching
+Plug 'jiangmiao/auto-pairs'
+
+" Distration free writing
+Plug 'junegunn/goyo.vim'
+let g:goyo_height=100
+" Ensure :q quits even if Goyo is active
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+" Themes as plugins
+Plug 'sainnhe/everforest'
+
+call plug#end()
+
+"Themes
+autocmd VimEnter * colorscheme delek
+syntax enable
+
+" Automatically enter distraction free writing
+autocmd VimEnter * Goyo
+
+" Auto save and restore views
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+" Fit buffer to window
+set wrap
+set linebreak
+
+" Set tabs to be 4 spaces
+set tabstop=4
+" Set folding filler characters
+set fillchars=fold:\ 
+" Keybinding to enter/exit Goyo
+nmap <f12> <esc>:Goyo<return>
+
+
+" Mappings
+map <f9> :NERDTreeToggle<return>
