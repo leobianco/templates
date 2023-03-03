@@ -118,4 +118,4 @@ set linebreak
 " Set tabs to be 4 spaces
 set tabstop=4
 " Set folding filler characters
-set fillchars=fold:\
+set fillchars=fold:\ 
