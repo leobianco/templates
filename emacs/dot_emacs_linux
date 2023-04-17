@@ -29,6 +29,8 @@
 (setq fill-column 80)
 ;; Change default font
 (set-frame-font "Menlo-14" nil t)
+;; Set tabstops
+(setq-default tab-width 2)
 ;; Disable auctex awful fontification
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 'color)
