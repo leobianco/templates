@@ -7,7 +7,7 @@
  '(custom-safe-themes
    '("7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" "db86c52e18460fe10e750759b9077333f9414ed456dc94473f9cf188b197bc74" default))
  '(package-selected-packages
-   '(writeroom-mode centered-window visual-fill-column material-theme markdown-mode auctex doom-themes focus yasnippet-snippets yasnippet use-package smartparens magit)))
+   '(latex-pretty-symbols latex-math-preview writeroom-mode centered-window visual-fill-column material-theme markdown-mode auctex doom-themes focus yasnippet-snippets yasnippet use-package smartparens magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,3 +34,5 @@
 ;; Disable auctex awful fontification
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 'color)
+;; Prettify mathematical symbols
+(add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
