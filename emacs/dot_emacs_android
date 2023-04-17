@@ -21,7 +21,8 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-(package-refresh-contents)
+;; shows packages in repo but slows down startup:
+;;(package-refresh-contents)
 ;; Word wrap on window border
 (global-visual-line-mode t)
 ;; Wrap on 80 chars
