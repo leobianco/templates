@@ -1,0 +1,34 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(doom-tomorrow-night))
+ '(custom-safe-themes
+   '("7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" "db86c52e18460fe10e750759b9077333f9414ed456dc94473f9cf188b197bc74" default))
+ '(package-selected-packages
+   '(writeroom-mode centered-window visual-fill-column material-theme markdown-mode auctex doom-themes focus yasnippet-snippets yasnippet use-package smartparens magit)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fringe ((t (:background "#1d1f21")))))
+;; MY CUSTOM COMMANDS
+;; Disable toolbar
+(tool-bar-mode -1)
+;; MELPA repository
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(package-refresh-contents)
+;; Word wrap on window border
+(global-visual-line-mode t)
+;; Wrap on 80 chars
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+(setq fill-column 80)
+;; Change default font
+(set-frame-font "Menlo-14" nil t)
+;; Disable auctex awful fontification
+(setq font-latex-fontify-script nil)
+(setq font-latex-fontify-sectioning 'color)
