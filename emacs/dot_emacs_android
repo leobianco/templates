@@ -1,0 +1,36 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(doom-material-dark))
+ '(custom-safe-themes
+	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
+ '(package-selected-packages
+	 '(smartparens yasnippet-snippets yasnippet focus latex-pretty-symbols writeroom-mode use-package magit doom-themes auctex)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+;; MY CUSTOM COMMANDS
+;; Disable toolbar
+(tool-bar-mode -1)
+;; MELPA repository
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(package-refresh-contents)
+;; Word wrap on window border
+(global-visual-line-mode t)
+;; Wrap on 80 chars
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+(setq fill-column 80)
+;; Set tabstops
+(setq-default tab-width 2)
+;; Disable auctex awful fontification
+(setq font-latex-fontify-script nil)
+(setq font-latex-fontify-sectioning 'color)
+;; Prettify mathematical symbols
+(add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
