@@ -5,9 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(doom-material-dark))
  '(custom-safe-themes
-   '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "ddffe74bc4bf2c332c2c3f67f1b8141ee1de8fd6b7be103ade50abb97fe70f0c" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" "944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" "79586dc4eb374231af28bbc36ba0880ed8e270249b07f814b0e6555bdcb71fab" default))
+	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "ddffe74bc4bf2c332c2c3f67f1b8141ee1de8fd6b7be103ade50abb97fe70f0c" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" "944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" "79586dc4eb374231af28bbc36ba0880ed8e270249b07f814b0e6555bdcb71fab" default))
  '(package-selected-packages
-   '(writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
+	 '(evil writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,11 +17,12 @@
 ;; MY CUSTOM CHANGES
 ;; MELPA Package Archives
 (require 'package)  ;; package.el
-(package-initialize)
 ;; repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")))  
+(package-initialize)
+(package-refresh-contents)
 ;; LaTeX setup
 (setq font-latex-fontify-sectioning 1.0)
 (setq TeX-auto-save t)
@@ -44,3 +45,10 @@
 (setq font-latex-fontify-sectioning 'color)
 ;; Prettify mathematical symbols
 (add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
+;; Evil mode for vim keybinds
+;; download
+(unless (package-installed-p 'evil)
+	(package-install 'evil))
+;; enable
+(require 'evil)
+(evil-mode 1)
