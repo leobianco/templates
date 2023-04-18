@@ -7,7 +7,7 @@
  '(custom-safe-themes
 	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
  '(package-selected-packages
-	 '(smartparens yasnippet-snippets yasnippet focus latex-pretty-symbols writeroom-mode use-package magit doom-themes auctex)))
+	 '(evil smartparens yasnippet-snippets yasnippet focus latex-pretty-symbols writeroom-mode use-package magit doom-themes auctex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -21,8 +21,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-;; shows packages in repo but slows down startup:
-;;(package-refresh-contents)
+(package-refresh-contents)
 ;; Word wrap on window border
 (global-visual-line-mode t)
 ;; Wrap on 80 chars
@@ -35,3 +34,8 @@
 (setq font-latex-fontify-sectioning 'color)
 ;; Prettify mathematical symbols
 (add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
+;; evil mode
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+(require 'evil)
+(evil-mode 1)
