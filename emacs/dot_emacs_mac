@@ -7,7 +7,7 @@
  '(custom-safe-themes
 	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "ddffe74bc4bf2c332c2c3f67f1b8141ee1de8fd6b7be103ade50abb97fe70f0c" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" "944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" "79586dc4eb374231af28bbc36ba0880ed8e270249b07f814b0e6555bdcb71fab" default))
  '(package-selected-packages
-	 '(company-jedi company-irony irony corfu evil writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
+	 '(elpy company-jedi company-irony irony corfu evil writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -88,6 +88,7 @@
   :bind ("C-;" . company-complete)
   )
 ;; Code completion for python
-(defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
-(add-hook 'python-mode-hook 'my/python-mode-hook)
+(use-package elpy
+	:ensure t
+	:init
+	(elpy-enable))
