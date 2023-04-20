@@ -7,7 +7,7 @@
  '(custom-safe-themes
 	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "ddffe74bc4bf2c332c2c3f67f1b8141ee1de8fd6b7be103ade50abb97fe70f0c" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "2dd4951e967990396142ec54d376cced3f135810b2b69920e77103e0bcedfba9" "944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" "79586dc4eb374231af28bbc36ba0880ed8e270249b07f814b0e6555bdcb71fab" default))
  '(package-selected-packages
-	 '(evil writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
+	 '(company-irony irony corfu evil writeroom-mode latex-pretty-symbols focus doom-themes smartparens auctex yasnippet-snippets yasnippet magit company lsp-mode use-package darcula-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -23,6 +23,15 @@
                          ("org" . "http://orgmode.org/elpa/")))  
 (package-initialize)
 (package-refresh-contents)
+;; use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package)
+  (eval-when-compile
+    (unless (bound-and-true-p package--initialized)
+      (package-initialize))  ;; be sure load-path includes package directories
+    (require 'use-package)
+    ))
 ;; LaTeX setup
 (setq font-latex-fontify-sectioning 1.0)
 (setq TeX-auto-save t)
@@ -52,3 +61,29 @@
 ;; enable
 (require 'evil)
 (evil-mode 1)
+;; Code completion in C++
+;; == irony-mode ==
+(use-package irony
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+)
+
+;; == company-mode ==
+(use-package company
+  :ensure t
+  :defer t
+  :init (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  (use-package company-irony :ensure t :defer t)
+  (setq company-idle-delay        0.1
+	company-minimum-prefix-length   2
+	company-show-numbers            t
+	company-tooltip-limit           20
+	company-dabbrev-downcase        nil
+	company-backends                '((company-irony company-gtags))
+	)
+  :bind ("C-;" . company-complete)
+  )
