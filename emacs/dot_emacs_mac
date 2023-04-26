@@ -20,7 +20,7 @@
 (custom-set-variables
  '(package-selected-packages
 	 '(company elpy irony company-irony evil writeroom-mode latex-pretty-symbols doom-themes smartparens auctex yasnippet yasnippet-snippets magit use-package))
- )
+)
 
 
 
@@ -71,9 +71,15 @@
 (setq font-latex-fontify-section nil)
 (setq font-latex-fontify-sectioning 'color)
 ;; Prettify mathematical symbols:
-(add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
+(add-hook 'latex-mode-hook 'prettify-symbols-mode)
+;; Pairing of symbols
+(add-hook 'latex-mode-hook 'smartparens-mode)
+;; Snippets
+(add-hook 'latex-mode-hook 'yas-global-mode)
+;; Folding of sections and environments
+(add-hook 'latex-mode-hook 'outline-minor-mode)
 ;; Turn on RefTex automatically in .tex files:
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'latex-mode-hook 'turn-on-reftex)
 ;; Activate nice interface between RefTex and AUCTeX
 (setq reftex-plug-into-AUCTeX t)
 ;; To find references in multifile projects:
