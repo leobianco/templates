@@ -1,0 +1,132 @@
+;; ---- PACKAGE REPOSITORIES ----
+;; Package repositories:
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")))  
+;; Initialize the package facility:
+(require 'package)  
+(package-initialize)
+;; P.S.: (package-initialize) finds all the installed packages and activate them by executing their <pkg>-autoload.el files. It tries to activate only the latest version.
+;;
+;; Inform Emacs the latest versions of packages in the specified repositories and make them available for download, i.e., update package list. It is commented out since refreshing packages is time-consuming and should be done on demand.
+;; (package-refresh-contents)
+
+
+
+;; ---- CUSTOM SET VARIABLES ----
+;; The variable package-selected-packages stores the packages explicitly installed by user. It is automatically fed by Emacs when installing a new package.
+;; It can be used to clean packages, i.e., when the function package-autoremove is run, it searches what packages are not in package-selected-packages and removes them.
+;; It also allows you to (re)install packages easily on other machines by running package-install-selected-packages.
+(custom-set-variables
+ '(package-selected-packages
+	 '(company elpy irony company-irony evil writeroom-mode latex-pretty-symbols doom-themes smartparens auctex yasnippet yasnippet-snippets magit use-package))
+)
+
+
+
+;; ---- GENERAL VISUAL CONFIGURATIONS ----
+;; Set theme
+(load-theme 'doom-material-dark t)
+;; Remove tool-bar
+(tool-bar-mode -1)
+;; Word wrap on window border
+(global-visual-line-mode t)
+;; Wrap on 80 chars
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+(setq fill-column 80)
+;; Set tabstops to four spaces
+(setq-default tab-width 4)
+;; Set font
+(add-to-list 'default-frame-alist' (font . "Monaco-14"))
+(set-face-attribute 'default t :font "Monaco-14")
+
+
+
+;; ---- USE-PACKAGE ----
+;;
+;; use-package is a macro that loads packages only when they are needed, and loads its settings alongside with it. It is not a package manager, as it serves only for loading and configuring of packages.
+;;
+;; Install and load use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package)
+  (eval-when-compile
+    (unless (bound-and-true-p package--initialized)
+      (package-initialize))  ;; be sure load-path includes package directories
+    (require 'use-package)
+    ))
+
+
+
+;; ---- LATEX (AUCTeX & RefTex) ----
+;; Find TeX-master in multifile projects:
+(setq-default TeX-master "../main.tex")
+;; AUCTex depends heavily on being able to extract information from the buffers by parsing them. Since parsing can be slow in some systems, it is initially disabled.
+;; Enable parsing:
+(setq TeX-parse-self t)
+;; Cache parsed information in "auto" directory:
+(setq TeX-auto-save t)  
+;; AUCTeX fontification settings:
+(setq font-latex-fontify-sectioning 1.0)
+(setq font-latex-fontify-section nil)
+(setq font-latex-fontify-sectioning 'color)
+;; Prettify mathematical symbols:
+(add-hook 'LaTeX-mode-hook 'prettify-symbols-mode)
+;; Pairing of symbols
+(add-hook 'LaTeX-mode-hook 'smartparens-mode)
+;; Snippets
+(add-hook 'LaTeX-mode-hook 'yas-global-mode)
+;; Folding of sections and environments (M-x ou-t)
+(add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+;; Turn on RefTex automatically in .tex files: (C-c [)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; Activate nice interface between RefTex and AUCTeX
+(setq reftex-plug-into-AUCTeX t)
+;; To find references in multifile projects:
+(setq reftex-bibpath-environment-variables
+			'("../references.bib"))
+
+
+
+;; ---- EVIL MODE ----
+;; Installation and loading:
+(unless (package-installed-p 'evil)
+	(package-install 'evil))
+(require 'evil)
+(evil-mode 1)
+
+
+
+;; ---- CODE COMPLETION: C++ ----
+;; irony-mode
+(use-package irony
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+)
+;; company-mode
+(use-package company
+  :ensure t
+  :defer t
+  :init (add-hook 'after-init-hook 'global-company-mode)
+  :config
+  (use-package company-irony :ensure t :defer t)
+  (setq company-idle-delay        0.1
+	company-minimum-prefix-length   2
+	company-show-numbers            t
+	company-tooltip-limit           20
+	company-dabbrev-downcase        nil
+	company-backends                '((company-irony company-gtags))
+	)
+  :bind ("C-;" . company-complete)
+  )
+
+
+
+;; ---- CODE COMPLETION: PYTHON ----
+(use-package elpy
+	:ensure t
+	:init
+	(elpy-enable))
