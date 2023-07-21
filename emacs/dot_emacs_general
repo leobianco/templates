@@ -78,7 +78,6 @@
 (add-hook 'TeX-mode-hook 'yas-global-mode)
 ;; Folding of sections and environments
 (add-hook 'TeX-mode-hook 'outline-minor-mode)
-(global-set-key (kbd "M-o") 'outline-toggle-children)
 ;; Centering of text
 (add-hook 'TeX-mode-hook 'writeroom-mode)
 ;; Turn on RefTex automatically in .tex files:
