@@ -41,6 +41,8 @@
 (set-face-attribute 'default t :font "IBM Plex Mono-18")
 ;; Set line spacing
 (setq-default line-spacing 0.3)
+;; Show line numbers
+(global-display-line-numbers-mode)
 
 
 ;; ---- USE-PACKAGE ----

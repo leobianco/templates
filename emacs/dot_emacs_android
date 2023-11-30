@@ -7,7 +7,7 @@
  '(custom-safe-themes
 	 '("da75eceab6bea9298e04ce5b4b07349f8c02da305734f7c0c8c6af7b5eaa9738" "7e377879cbd60c66b88e51fad480b3ab18d60847f31c435f15f5df18bdb18184" default))
  '(package-selected-packages
-	 '(evil smartparens yasnippet-snippets yasnippet focus latex-pretty-symbols writeroom-mode use-package magit doom-themes auctex)))
+	 '(company-c-headers company evil smartparens yasnippet-snippets yasnippet focus latex-pretty-symbols writeroom-mode use-package magit doom-themes auctex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,3 +39,14 @@
   (package-install 'evil))
 (require 'evil)
 (evil-mode 1)
+;; company mode
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-backends (delete 'company-semantic company-backends))
+;; install company-c-headers first
+(add-to-list 'company-backends 'company-c-headers)
+;; python code completion
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
