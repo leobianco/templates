@@ -1,0 +1,66 @@
+My Ubuntu configuration:
+The idea is to describe here all steps needed to take from a freshly installed Ubuntu to my current workflow.
+
+* Applications:
+    - Install vim-gtx3 (better features such as clipboard).
+    - Insync
+    - LaTeX distribution
+    - Variety (for wallpapers)
+    - Firefox
+    - draw.io
+    - If not already installed: ImageMagick, Shotwell, eVince (document viewer).
+    - Zotero
+    - Python
+    - Zathura PDF
+
+* System settings
+    - Appearance:
+	- Auto-hide the Dock
+    - Multitasking: 
+	- Set Dynamic workspaces
+    - Keyboard:
+	- Compose key: right alt
+	- Custom keybindings: alt+c for browser, alt+t for terminal, alt+w for work lwsm layout.
+    - Accessibility:
+	- Large text
+	- Disable animations
+	- Repeat keys: on and make it fast
+    - Install Gnome Tweaks:
+	- Change theme to Yaru-olive-dark
+	- Change Caps-Lock to be alternative esc, shift+caps=true caps.
+    - Set defaults:
+	- Firefox as browser
+	- Zathura as pdf reader (I lie the lighthaus theme)
+
+* Shell/bash
+    - Copy the .bashrc and .bash_aliases in this folder.
+	- If these are lost or old, essentially create aliases to easily edit them on vim, one to edit your .vimrc, others to easily access your work folders and writing documents. Create a function newdraft to copy your ExampleDraft folder into your pwd.
+    - Install lwsm to save your workspace layouts.
+
+* vim
+    - Install vim-plug
+    - Copy the .vimrc stored in this folder to your home directory.
+	- If this is not possible (the .vimrc is lost), here is a description of what it contained.
+	- vimtex
+	- ultisnips
+	- auto-pairs
+	- goyo
+	- I also downloaded two colorschemes: deus and monokai.
+	- Commands to auto-save and auto-restore folds/views:
+	    autocmd BunWinLeave *.* mkview
+	    autocmd BunWinEnter *.* silent loadview
+	- Set tabs to be 4 spaces: set tabstop=4
+	- Set folding filler characters: set fillchars=fold:\ 
+	- Keybinding to enter/exit goyo: nmap <f12> <esc>:Goyo<return> 
+
+* Wallpapers
+    - Are saved in this folder.
+
+* Firefox:
+    - Install the following extensions:
+	- Dark Reader
+	- Gnome shell integration
+	- Unhook for YouTube.
+	- Vimium
+	- Url shortener
+	- Zotero connector

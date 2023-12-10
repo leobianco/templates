@@ -1,0 +1,34 @@
+Apps:
+* brew
+* python (brew install python)
+* iTerm2
+* oh my zsh
+* BetterTouchTool
+* LaTeX
+* MacForge
+* NordVPN
+* Typora
+* Google Drive Sync
+* Horo
+* Magnet
+* TextMate
+* Visual Studio
+* VLC
+* Zoom
+* Zotero
+
+Useful procedures
+* Eliminate window shadows with MacForge plugin (no shadows).
+* Set permanent night shift for your eyes.
+* Disable adaptive brightness.
+* Set BetterTouchTool keys.
+* Set desktop picture to black.
+* Set iTerm's profile to Material Design Colors.
+
+Browser extensions
+* Vimium.
+* Unhook for YouTube.
+* Wikiwand for Wikipedia.
+* Simplify Gmail.
+* Zotero's connector.
+* AdBlock.
