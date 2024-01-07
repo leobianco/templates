@@ -1,4 +1,4 @@
-% Define here your custom commands.
+% Define custom commands, operators, and environments.
 
 % Syntax:
 % \newcommand{name}[nb. params][default]{command}
@@ -7,25 +7,7 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
-\newcommand{\todef}[1]{\textbf{{\color{gray}{define:}}
-		{\color{purple}{#1}}}}
 \newcommand{\todo}[1]{\textbf{{\color{gray}{todo:}}
 		{\color{red}{#1}}}}
-% To create list of theorems and propositions, definitions, questions
-\newcommand{\listtheorems}{
-	\renewcommand{\listtheoremname}{List of Theorems}
-	\listoftheorems[ignoreall, show={theorem,proposition}]
-}
-\newcommand{\listdefinitions}{
-	\renewcommand{\listtheoremname}{List of Definitions}
-	\listoftheorems[ignoreall, show={definition}]
-}
-\newcommand{\listquestions}{
-	\renewcommand{\listtheoremname}{List of Questions}
-	\listoftheorems[ignoreall, show={question}]
-}
-\newcommand{\answerref}[1]{
-	\hyperref[#1]{(Answer)}
-}
 
 \endinput
