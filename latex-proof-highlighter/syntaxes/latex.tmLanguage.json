@@ -8,6 +8,9 @@
       "include": "#equation-environment"
     },
     {
+      "include": "#comments"
+    },
+    {
       "name": "keyword.custom.environments",
       "match": "(?i)\\b(definition|theorem|proposition|lemma|corollary|proof)\\b"
     },
@@ -49,6 +52,17 @@
     }
   ],
   "repository": {
+    "comments": {
+      "name": "comment.line.percentage.custom-latex",
+      "begin": "%",
+      "end": "$\\n?",
+      "patterns": [
+        {
+          "name": "comment.line.percentage.custom-latex",
+          "match": ".+"
+        }
+      ]
+    },
       "inline-math": {
       "name": "meta.inline-math.custom-latex",
       "begin": "\\\\\\(",
