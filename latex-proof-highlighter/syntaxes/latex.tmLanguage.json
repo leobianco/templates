@@ -40,7 +40,7 @@
     },
     {
       "name": "keyword.custom.we-get",
-      "match": "(?i)\\bwe get\\b"
+      "match": "(?i)\\b(we get|we have)\\b"
     },
     {
       "name": "keyword.custom.by",
