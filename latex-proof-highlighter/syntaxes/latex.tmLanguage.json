@@ -2,8 +2,16 @@
   "scopeName": "source.custom-latex",
   "patterns": [
     {
+      "name": "keyword.custom.environments",
+      "match": "(?i)\\b(definition|theorem|proposition|lemma|corollary|proof)\\b"
+    },
+    {
       "name": "keyword.custom.let",
       "match": "(?i)\\blet\\b"
+    },
+    {
+      "name": "keyword.custom.if",
+      "match": "(?i)\\bif\\b"
     },
     {
       "name": "keyword.custom.then",
