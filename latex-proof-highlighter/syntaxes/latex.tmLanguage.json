@@ -1,0 +1,53 @@
+{
+  "scopeName": "source.custom-latex",
+  "patterns": [
+    {
+      "name": "keyword.custom.let",
+      "match": "(?i)\\blet\\b"
+    },
+    {
+      "name": "keyword.custom.then",
+      "match": "(?i)\\bthen\\b"
+    },
+    {
+      "name": "keyword.custom.by",
+      "match": "(?i)\\bby\\b"
+    },
+    {
+      "name": "keyword.custom.using",
+      "match": "(?i)\\busing\\b"
+    },
+    {
+      "name": "keyword.custom.due",
+      "match": "(?i)\\bdue\\b"
+    },
+    {
+      "name": "keyword.custom.from",
+      "match": "(?i)\\bfrom\\b"
+    },
+    {
+      "name": "keyword.custom.we-get",
+      "match": "(?i)\\bwe get\\b"
+    },
+    {
+      "name": "keyword.custom.imply",
+      "match": "(?i)\\b(imply|implies|implying)\\b"
+    },
+    {
+      "name": "keyword.custom.assume",
+      "match": "(?i)\\bassume\\b"
+    },
+    {
+      "name": "keyword.custom.suppose",
+      "match": "(?i)\\bsuppose\\b"
+    },
+    {
+      "name": "keyword.custom.define",
+      "match": "(?i)\\bdefine\\b"
+    },
+    {
+      "name": "keyword.custom.denote",
+      "match": "(?i)\\bdenote\\b"
+    }
+  ]
+}
