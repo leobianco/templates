@@ -12,8 +12,16 @@
       "match": "(?i)\\b(definition|theorem|proposition|lemma|corollary|proof)\\b"
     },
     {
+      "name": "keyword.custom.suppose",
+      "match": "(?i)\\b(suppose|supposing)\\b"
+    },
+    {
+      "name": "keyword.custom.assume",
+      "match": "(?i)\\b(assume|assuming)\\b"
+    },
+    {
       "name": "keyword.custom.let",
-      "match": "(?i)\\blet\\b"
+      "match": "(?i)\\b(let|letting)\\b"
     },
     {
       "name": "keyword.custom.if",
@@ -21,47 +29,23 @@
     },
     {
       "name": "keyword.custom.then",
-      "match": "(?i)\\bthen\\b"
-    },
-    {
-      "name": "keyword.custom.by",
-      "match": "(?i)\\bby\\b"
-    },
-    {
-      "name": "keyword.custom.using",
-      "match": "(?i)\\busing\\b"
-    },
-    {
-      "name": "keyword.custom.due",
-      "match": "(?i)\\bdue\\b"
-    },
-    {
-      "name": "keyword.custom.from",
-      "match": "(?i)\\bfrom\\b"
-    },
-    {
-      "name": "keyword.custom.we-get",
-      "match": "(?i)\\bwe get\\b"
+      "match": "(?i)\\b(then|therefore|thus)\\b"
     },
     {
       "name": "keyword.custom.imply",
       "match": "(?i)\\b(imply|implies|implying)\\b"
     },
     {
-      "name": "keyword.custom.assume",
-      "match": "(?i)\\bassume\\b"
+      "name": "keyword.custom.we-get",
+      "match": "(?i)\\bwe get\\b"
     },
     {
-      "name": "keyword.custom.suppose",
-      "match": "(?i)\\bsuppose\\b"
+      "name": "keyword.custom.by",
+      "match": "(?i)\\b(by|using|due|from)\\b"
     },
     {
       "name": "keyword.custom.define",
-      "match": "(?i)\\bdefine\\b"
-    },
-    {
-      "name": "keyword.custom.denote",
-      "match": "(?i)\\bdenote\\b"
+      "match": "(?i)\\b(define|denote)\\b"
     }
   ],
   "repository": {
