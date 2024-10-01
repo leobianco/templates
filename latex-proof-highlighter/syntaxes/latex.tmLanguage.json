@@ -2,6 +2,9 @@
   "scopeName": "source.custom-latex",
   "patterns": [
     {
+      "include": "#inline-math"
+    },
+    {
       "include": "#equation-environment"
     },
     {
@@ -62,6 +65,23 @@
     }
   ],
   "repository": {
+      "inline-math": {
+      "name": "meta.inline-math.custom-latex",
+      "begin": "\\\\\\(",
+      "end": "\\\\\\)",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.math.begin.custom-latex" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.math.end.custom-latex" }
+      },
+      "patterns": [
+        {
+          "name": "meta.inline-math.content.custom-latex",
+          "match": "."
+        }
+      ]
+    },
     "equation-environment": {
       "name": "meta.equation.environment.custom-latex",
       "begin": "(\\\\begin\\{)(equation|align)(\\*?)(\\})",
