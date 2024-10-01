@@ -2,6 +2,9 @@
   "scopeName": "source.custom-latex",
   "patterns": [
     {
+      "include": "#equation-environment"
+    },
+    {
       "name": "keyword.custom.environments",
       "match": "(?i)\\b(definition|theorem|proposition|lemma|corollary|proof)\\b"
     },
@@ -57,5 +60,30 @@
       "name": "keyword.custom.denote",
       "match": "(?i)\\bdenote\\b"
     }
-  ]
+  ],
+  "repository": {
+    "equation-environment": {
+      "name": "meta.equation.environment.custom-latex",
+      "begin": "(\\\\begin\\{)(equation|align)(\\*?)(\\})",
+      "end": "(\\\\end\\{)(\\2)(\\3)(\\})",
+      "beginCaptures": {
+        "1": { "name": "support.function.begin.latex" },
+        "2": { "name": "entity.name.environment.latex" },
+        "3": { "name": "keyword.operator.latex" },
+        "4": { "name": "support.function.begin.latex" }
+      },
+      "endCaptures": {
+        "1": { "name": "support.function.end.latex" },
+        "2": { "name": "entity.name.environment.latex" },
+        "3": { "name": "keyword.operator.latex" },
+        "4": { "name": "support.function.end.latex" }
+      },
+      "patterns": [
+        {
+          "name": "meta.equation.content.custom-latex",
+          "match": "."
+        }
+      ]
+    }
+  }
 }
