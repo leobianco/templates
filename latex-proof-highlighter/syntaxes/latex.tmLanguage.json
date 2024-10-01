@@ -44,7 +44,7 @@
     },
     {
       "name": "keyword.custom.by",
-      "match": "(?i)\\b(by|using|due|from)\\b"
+      "match": "(?i)\\b(using|due|from)\\b"
     },
     {
       "name": "keyword.custom.define",
