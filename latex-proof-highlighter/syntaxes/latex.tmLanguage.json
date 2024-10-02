@@ -43,6 +43,10 @@
       "match": "(?i)\\b(we get|we have)\\b"
     },
     {
+      "name": "keyword.custom.for-all",
+      "match": "(?i)\\b(for all|for any)\\b"
+    },
+    {
       "name": "keyword.custom.by",
       "match": "(?i)\\b(using|due|from)\\b"
     },
