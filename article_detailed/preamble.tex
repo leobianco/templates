@@ -1,0 +1,63 @@
+% Graphics
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{
+	arrows, arrows.meta, positioning, fit
+}
+\usepackage{caption}
+\usepackage{subcaption}  % grids of images
+\usepackage[section]{placeins}  % figures stay in section: can mess up conference templates!
+% For wider text, uncomment below
+% \usepackage{geometry}
+% \geometry{
+% left=16mm,
+% top=30mm,
+% right=16mm,
+% bottom=30mm
+% }
+
+% Mathematics and code
+\usepackage{mathtools,amsthm,amssymb}
+\usepackage{bm}  % for bold greek math
+\usepackage{mathrsfs}  % \mathscr command
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{thmtools}  % theorem, definition, and question lists
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}  
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{question}{Question}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Fonts, symbols, languages, tables
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}  % Custom numbered items, such as steps 1, 2, etc.
+\usepackage{enumitem}  % Ordinals
+\usepackage{moreenum}
+\usepackage{verbatim}
+\usepackage{booktabs}  % better tables
+\usepackage{multirow}  % merging cells in tables
+\usepackage{adjustbox}  % make tables fit the page
+% To change font, uncomment below
+% \usepackage{newpxtext,newpxmath}
+
+% References and links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue,
+    }
+\usepackage{url}
+
+\endinput
