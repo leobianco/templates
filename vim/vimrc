@@ -10,6 +10,8 @@ syntax enable
 filetype plugin on
 " Make Python indentation equal to two spaces
 autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
+" Highlight column 80 for Python files
+autocmd FileType python setlocal colorcolumn=81
 
 " win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
