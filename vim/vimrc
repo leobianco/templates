@@ -23,6 +23,9 @@ set backspace=indent,eol,start
 " Show line numbers
 set number
 
+" Show line and column number in status bar
+set ruler
+
 " Fit buffer to window
 set wrap
 set linebreak
