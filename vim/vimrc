@@ -9,7 +9,7 @@ colorscheme wildcharm
 syntax enable
 filetype plugin on
 " Make Python indentation equal to two spaces
-autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " Highlight column 80 for Python files
 autocmd FileType python setlocal colorcolumn=81
 
