@@ -1,23 +1,27 @@
 " Acceptable colorschemes
-colorscheme wildcharm
+"colorscheme wildcharm
 "colorscheme desert
 "colorscheme habamax 
 "colorscheme retrobox 
 "colorscheme sorbet
 
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 syntax enable
 filetype plugin on
+
+" PYTHON
 " Make Python indentation equal to two spaces
-autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+au BufRead,BufNewFile *.py set expandtab tabstop=2 shiftwidth=2 softtabstop=2 nosmartindent
 " Highlight column 80 for Python files
 autocmd FileType python setlocal colorcolumn=81
 
-" win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
+" TAB CONFIG
+set expandtab
+set tabstop=2 
+set softtabstop=2 
+set shiftwidth=2
+set autoindent
 
-" Make backspace work on everything
+" BACKSPACE -> make it work on everything
 set backspace=indent,eol,start
 
 " Show line numbers
@@ -30,10 +34,6 @@ set ruler
 set wrap
 set linebreak
 
-" Set tabs to be 2 spaces
-set nosmarttab
-set autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
-
 " Set folding filler characters
 set fillchars=fold:\ 
 
@@ -41,6 +41,10 @@ set fillchars=fold:\
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+" win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
 
 " If plugin manager is not installed, install it
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
