@@ -1,0 +1,80 @@
+" Acceptable colorschemes
+colorscheme wildcharm
+"colorscheme desert
+"colorscheme habamax 
+"colorscheme retrobox 
+"colorscheme sorbet
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+syntax enable
+filetype plugin on
+" Make Python indentation equal to two spaces
+autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" Make backspace work on everything
+set backspace=indent,eol,start
+
+" Show line numbers
+set number
+
+" Fit buffer to window
+set wrap
+set linebreak
+
+" Set tabs to be 2 spaces
+set nosmarttab
+set autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
+
+" Set folding filler characters
+set fillchars=fold:\ 
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" General
+Plug 'jiangmiao/auto-pairs'
+
+" LaTeX
+Plug 'lervag/vimtex'
+let g:vimtex_compiler_latexmk = {'continuous': 0}
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_open_on_warning = 0
+set conceallevel=2
+" To allow folds:
+" let g:vimtex_fold_enabled = 1
+
+" Track the engine.
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" Initialize plugin system
+call plug#end()
+
+
+" Auto save and restore views
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
