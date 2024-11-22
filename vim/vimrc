@@ -3,7 +3,7 @@
 "colorscheme desert
 "colorscheme habamax 
 "colorscheme retrobox 
-"colorscheme sorbet
+colorscheme sorbet
 
 syntax enable
 filetype plugin on
@@ -29,6 +29,8 @@ set number
 
 " Show line and column number in status bar
 set ruler
+" Show status line only if there are at least two windows
+set laststatus=1
 
 " Fit buffer to window
 set wrap
