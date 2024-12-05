@@ -10,9 +10,9 @@ filetype plugin on
 
 " PYTHON
 " Make Python indentation equal to two spaces
-au BufRead,BufNewFile *.py set expandtab tabstop=2 shiftwidth=2 softtabstop=2 nosmartindent
+au FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " Highlight column 80 for Python files
-au BufRead,BufNewFile *.py set colorcolumn=81
+au FileType python setlocal colorcolumn=81
 
 " TAB CONFIG
 set expandtab
