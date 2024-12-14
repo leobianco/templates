@@ -3,7 +3,7 @@
 "colorscheme desert
 "colorscheme habamax 
 "colorscheme retrobox 
-colorscheme sorbet
+"colorscheme sorbet
 
 syntax enable
 filetype plugin on
@@ -38,6 +38,9 @@ set linebreak
 
 " Set folding filler characters
 set fillchars=fold:\ 
+
+" Needed for conceal in vimtex
+set encoding=utf-8
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
