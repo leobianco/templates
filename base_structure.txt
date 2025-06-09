@@ -1,0 +1,27 @@
+.
+├── 01_Work
+│   ├── Archive
+│   ├── latex_perl_hallucination
+│   └── perl_hallucination
+├── 02_Projects
+│   ├── isotex
+│   ├── makemore
+│   ├── odin
+│   └── site
+├── 03_Study
+│   ├── ai
+│   └── linux
+├── 04_Personal
+│   └── 2025
+├── 05_Templates
+│   ├── article
+│   ├── article_detailed
+│   ├── devices
+│   ├── emacs
+│   ├── latex-proof-highlighter
+│   ├── report
+│   └── vim
+├── 06_Inbox
+└── 07_Archive
+
+25 directories
