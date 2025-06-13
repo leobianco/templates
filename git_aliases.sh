@@ -1,3 +1,4 @@
+git config --global alias.gpl pull
 git config --global alias.ga add
 git config --global alias.gc commit
 git config --global alias.gp push
