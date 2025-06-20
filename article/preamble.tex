@@ -43,6 +43,13 @@
 \usepackage{algpseudocode}
 \usepackage{listings}
 
+% IMPORTANT:
+% Below, I define the styles for Python and JavaScript code.
+% HOWEVER, you must choose which one to use by running 
+% \lstset{style=your_style}
+% BY DEFAULT, I run \lstset{style=Python} below (after style declarations).
+% Change this if you are writing about some other language!
+
 % Custom listings languages
 \lstdefinelanguage{JavaScript}{
   morekeywords=[1]{break, continue, delete, else, for, function, if, in,
@@ -145,6 +152,9 @@
   language=HTML,
   style=JSES6Base
 }
+
+% Setting code style as Python by default
+\lstset{style=Python}
 
 
 % ---- FONTS, SYMBOLS, LANGUAGES, TABLES ----
