@@ -162,10 +162,12 @@
 \usepackage{enumerate}  % Custom numbered items, such as steps 1, 2, etc.
 \usepackage{enumitem}  % Ordinals
 \usepackage{moreenum}
-\usepackage{verbatim}
+\usepackage{fancyvrb}  % fancy verbatim with colors
+\usepackage{fvextra}
 \usepackage{booktabs}  % better tables
 \usepackage{multirow}  % merging cells in tables
 \usepackage{adjustbox}  % make tables fit the page
+\usepackage{inconsolata}  % better monospace font
 
 % To change font, uncomment below
 % \usepackage{newpxtext,newpxmath}
@@ -174,7 +176,8 @@
 % \setlength{\parindent}{0pt}
 
 
-% ---- REFERENCES AND LINKS ----
+% ---- BIBLIOGRAPHY, REFERENCES, AND LINKS ----
+\usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{url}
 
@@ -184,6 +187,6 @@
     filecolor=magenta,
     urlcolor=cyan,
     citecolor=blue,
-    }
+}
 
 \endinput
