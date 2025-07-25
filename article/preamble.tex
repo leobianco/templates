@@ -164,6 +164,13 @@
 \usepackage{moreenum}
 \usepackage{fancyvrb}  % fancy verbatim with colors
 \usepackage{fvextra}
+\fvset{  % configure Verbatim to auto break lines, allow colors, remove arrows
+  breaklines=true,
+  breakanywhere=true,
+  commandchars=\\\{\},
+  breaksymbol={},
+  breakanywheresymbolpre={}
+}
 \usepackage{booktabs}  % better tables
 \usepackage{multirow}  % merging cells in tables
 \usepackage{adjustbox}  % make tables fit the page
